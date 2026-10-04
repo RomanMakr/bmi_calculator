@@ -43,3 +43,17 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Игнорировать лишние языки, чтобы Flutter (Dart) стал основным
+*.h linguist-detectable=false
+*.cc linguist-detectable=false
+*.cpp linguist-detectable=false
+*.cmake linguist-detectable=false
+*.gradle linguist-detectable=false
+*.json linguist-detectable=false
+*.plist linguist-detectable=false
+*.xml linguist-detectable=false
+*.xib linguist-detectable=false
+*.storyboard linguist-detectable=false
+*.manifest linguist-detectable=false
+*.entitlements linguist-detectable=false
