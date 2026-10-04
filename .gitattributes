@@ -1,0 +1,17 @@
+# Игнорировать системный код платформ в статистике языков
+*.h linguist-detectable=false
+*.cc linguist-detectable=false
+*.cpp linguist-detectable=false
+*.c linguist-detectable=false
+*.cmake linguist-detectable=false
+*.gradle linguist-detectable=false
+*.plist linguist-detectable=false
+*.xml linguist-detectable=false
+*.xib linguist-detectable=false
+*.storyboard linguist-detectable=false
+*.entitlements linguist-detectable=false
+*.json linguist-detectable=false
+
+# Принудительно считать Dart главным языком
+*.dart linguist-language=Dart
+*.dart linguist-detectable=true
