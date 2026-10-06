@@ -8,11 +8,6 @@ class AppTheme {
 
     scaffoldBackgroundColor: AppColors.backgroundColor,
 
-    colorScheme: ColorScheme.fromSeed(
-      seedColor: AppColors.primary,
-      brightness: Brightness.light,
-    ),
-
     appBarTheme: const AppBarTheme(
       centerTitle: true,
       elevation: 0,
@@ -49,14 +44,20 @@ class AppTheme {
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
-       minimumSize: Size(
-        double.infinity,
-        56,
-       ),
-       shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16),
-        ),
+        minimumSize: Size(double.infinity, 56),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
       ),
+    ),
+    colorScheme: ColorScheme.fromSeed(
+      seedColor: AppColors.primary,
+      brightness: Brightness.light,
+      surface: AppColors.card,
+      onSurface: AppColors.textPrimary,
+      primary: AppColors.primary,
+      onPrimary: Colors.white,
+      background: AppColors.backgroundColor,
+      onBackground: AppColors.textPrimary,
+      tertiary: AppColors.transparent,
     ),
   );
 }

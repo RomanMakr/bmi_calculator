@@ -6,6 +6,7 @@ class AppColors {
 
   static const backgroundColor = Color(0xFFF8FAFC);
   static const card = Colors.white;
+  static const transparent = Colors.transparent;
 
   static const textPrimary = Color(0xFF0F172A);
   static const textSecondary = Color(0xFF64748B);
