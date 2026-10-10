@@ -8,12 +8,25 @@ class ResetBmiButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return OutlinedButton(
+    return ElevatedButton(
       onPressed: () {
+        FocusManager.instance.primaryFocus?.unfocus();
         context.read<BmiCubit>().resetBmi();
         Navigator.pop(context);
       },
-      child:  const Text('CALCULATE AGAIN'),
+      style: ElevatedButton.styleFrom(
+        minimumSize: const Size.fromHeight(80),
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(
+            top: Radius.zero,
+            bottom: Radius.circular(24),
+          ),
+        ),
+      ),
+      child: const Text(
+        'RECALCULATE',
+        style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+      ),
     );
   }
 }
