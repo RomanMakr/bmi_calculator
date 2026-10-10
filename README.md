@@ -95,7 +95,7 @@ calls `CalculateBmi`, receives a `BmiResult`, and emits it as state. The
 calculator screen listens for that result and navigates to the result screen.
 Recalculate resets the Cubit state and returns to the form.
 
-### Directory structure
+### Architecture structure
 
 ```text
 lib/
