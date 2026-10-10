@@ -28,14 +28,16 @@ class BmiState {
     String? error,
     bool clearResult = false,
     bool clearError = false,
+    bool clearAge = false,
+    bool clearWeight = false,
   }) {
     return BmiState(
       gender: gender ?? this.gender,
       height: height ?? this.height,
-      weight: weight ?? this.weight,
-      age: age ?? this.age,
+      weight: clearWeight ? null : weight ?? this.weight,
+      age: clearAge ? null : age ?? this.age,
       bmiResult: clearResult ? null : bmiResult ?? this.bmiResult,
-      error: clearError ? null : error ?? this.error
+      error: clearError ? null : error ?? this.error,
     );
   }
 }
