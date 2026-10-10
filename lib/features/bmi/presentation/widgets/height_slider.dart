@@ -11,43 +11,51 @@ class HeightSlider extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<BmiCubit, BmiState>(
       builder: (context, state) {
-        final height = state.height;
+        final height = state.height ?? 100;
 
         return Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Text(
-              'Height',
-              style: Theme.of(context).textTheme.titleMedium,
-            ),
-            const SizedBox(height: 12),
-            Center(
-              child: Text(
-                height == null
-                ? '-- cm' : '${height.toInt()} cm',
-                style: const TextStyle(
-                  fontSize: 32,
-                  fontWeight: FontWeight.bold,
-                ),
+              'HEIGHT',
+              textAlign: TextAlign.center,
+              style: const TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
               ),
             ),
-            const SizedBox(height: 8),
+            const SizedBox(height: 4),
+            RichText(
+              textAlign: TextAlign.center,
+              text: TextSpan(
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 40,
+                  fontWeight: FontWeight.bold,
+                ),
+                children: [
+                  TextSpan(text: height.toInt().toString()),
+                  const TextSpan(
+                    text: 'cm',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 4),
             Slider(
               min: 100,
               max: 220,
               divisions: 120,
-              value: height ?? 100,
-              onChanged: ( value) {
+              value: height,
+              onChanged: (value) {
                 context.read<BmiCubit>().changeHeight(value);
               },
             ),
-            const Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text('100 cm'),
-                Text('220 cm'),
-              ],
-            )
           ],
         );
       },
